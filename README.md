@@ -25,11 +25,11 @@ cd openshift-3june-2024
 - Linux Server 2 ( 10.10.15.103 ) - Openshift cluster 2 ( 8 participants - user08 thru user14 and user24 )
 - Linux Server 3 ( 10.10.15.101 ) - openshift cluster 3 ( 9 participants - user15 thru user22 and user25 )
 
-- In case you RPS cloud login username is 24MAN0605-u01, then you should login to your respective Linux server as user01 with password 'rps@2345' to the Server 1 (10.10.15.102).
+- In case you RPS cloud login username is 24MAN0605-u01, then you should login to your respective Linux server as user01 with password 'rps@12345' to the Server 1 (10.10.15.102).
 
-- In case you cloud login username 24MAN0605-u15, then you should login as user15 with password 'rps@2345' to the Server 2 (10.10.15.103).
+- In case you cloud login username 24MAN0605-u15, then you should login as user15 with password 'rps@12345' to the Server 2 (10.10.15.103).
 
-- In case your RPS cloud login username is 24MAN0605-u25, then you should login to your respective Linux server as user25 with password 'rps@2345' to the Server 3 (10.10.15.101).
+- In case your RPS cloud login username is 24MAN0605-u25, then you should login to your respective Linux server as user25 with password 'rps@12345' to the Server 3 (10.10.15.101).
 
 ## Pre-test - kindly complete the pre-test from your RPS Lab machine
 <pre>
