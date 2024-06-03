@@ -276,3 +276,10 @@ oc describe node master-1.ocp4.tektutor.org.labs
 Expected output
 ![nodes](describe.png)
 
+
+## Lab - Editing a node - don't modify anything :)
+```
+oc get nodes
+oc edit node/worker-1.ocp4.tektutor.org.labs
+```
+
