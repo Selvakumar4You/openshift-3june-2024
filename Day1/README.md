@@ -212,3 +212,13 @@ Expected output
 Expected output
 ![kubeconfig](kubeconfig.png)
 
+## Lab - Finding more details about an openshift node
+```
+oc get nodes
+oc describe node/master-1.ocp4.tektutor.org.labs
+oc describe node master-1.ocp4.tektutor.org.labs
+```
+
+Expected output
+![nodes](describe.png)
+
