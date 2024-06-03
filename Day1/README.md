@@ -283,3 +283,12 @@ oc get nodes
 oc edit node/worker-1.ocp4.tektutor.org.labs
 ```
 
+## Info - Openshift Projects
+<pre>
+- In order to seggreate the application deployments made by different teams, namespaces or projects are created
+- For each team, atleast one project is created, so that multiple engineers can work together
+- many applications can deployed into a single openshift project
+- Administrators can give access to projects the developers are working in, while denying access to other users
+- it is always recommended to create a separate before we deploy our applications
+- training specific request - each user can create one project in your name
+</pre>
