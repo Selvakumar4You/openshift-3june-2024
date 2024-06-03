@@ -127,3 +127,43 @@
 - supports exposing your application only within the openshift cluster or outside the openshift cluster via services
 - supports rolling update
 - supports scaling up/down your application instance counts
+
+## Commonly Used OpenShift resources
+- Pod
+- ReplicaSet
+- Deployment
+
+## What is OpenShift Cluster?
+- OpenShift cluster is a collection of many machines
+- each machine is referred as node in the Kubernetes/Openshift
+- each node is either of type of Master or Worker
+- Master nodes runs the Control Plane components
+  - API Server
+  - etcd database
+  - scheduler
+  - controller managers
+- Worker nodes runs the user containerized application workloads
+
+## What is a Pod?
+- a collection of related containers
+- each container represents one application or one application component
+- Pod is the small unit that can be deployed in Kubernetes/OpenShift
+- one application per Pod is the recommended best practice
+- IP address is assigned on the Pod level, not on the container level
+- hence, every container that is part of the same Pod shares the same IP address
+- Pod is yaml/json resource that lives in etcd database
+- the containers associated to the Pod runs in any nodes within the Openshift cluster
+
+## What is ReplicaSet?
+- Replicaset is a resource that is stored and maintained in etcd database by API Server(Control Plane)
+- ReplicaSet tells what is the desired number of Pods that be running at any point of time within Kubernetes/OpenShift
+- ReplicaSet is managed by a controller called ReplicaSet Controller
+
+## What is Deployment
+- Deployment is a resourced stored and maintained in etcd database by API Server
+- for each application we deploy in Openshift, a deployment will be created
+- Deployment is managed by a controller called Deployment Controller
+- the deploy has
+  - an unique name
+  - desired number of Pods that should be running
+  - container image that must be used to deploy the Pod containers
