@@ -307,4 +307,12 @@ Expected output
 ![projects](project1.png)
 ![projects](project2.png)
 
+## Lab - Creating a new project
+```
+oc new-project jegan
+```
+
+Expected output
+![project](project3.png)
+
 
