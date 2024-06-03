@@ -190,3 +190,13 @@
 - For example
   - Deployment Controller can detect Deployment resources created/edited/deleted/scaled up/down in any namespace/project
   - ReplicaSet Controller can detect ReplicaSet resources created in any namespace/project
+
+## Lab - Listing the nodes in the Openshift cluster
+```
+oc get nodes
+oc get nodes -o wide
+```
+
+Expected output
+![nodes](node1.png)
+![nodes](node2.png)
