@@ -120,3 +120,10 @@
 - supports additional Custom Resources in Openshift
   - DeploymentConfig
   - Route
+- self-healing platform
+- supports in-built monitoring features
+- supports in-built load-balancing
+- supports high-availability for your applications deployed within Kubernetes/Openshift
+- supports exposing your application only within the openshift cluster or outside the openshift cluster via services
+- supports rolling update
+- supports scaling up/down your application instance counts
