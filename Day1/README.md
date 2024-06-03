@@ -72,11 +72,51 @@
 - Docker is developed in Go language by the company Docker Inc
 - follows client/server architecture
 - the server runs in the OS Kernel context (administrator), hence most container we create we will gain admin access within the containers, even in the case the user who created the container is a non-admin user
+
 ## Podman Overview
 - Podman is alternate to Docker
 - Podman is also opensource maintained by Community headed by Red Hat
 - stand-alone tool unlike Docker
 - supports creating root-less container i.e running application as normal user ( non-admin users )
+
 ## Container Orchestration Overview
+- though containerized application workloads can be manually managed, in real-world no organization manages containers manually
+- generally containerized applications are managed by Container Orchestration Platforms
+- Examples
+  - Docker SWARM
+  - Google Kubernetes
+  - AWS EKS - Elastic Kubernetes Service ( Managed K8s Cluster from Amazon AWS)
+  - Azure AKS - Azure Kubernetes Service ( Managed K8s Cluster from Microsoft Azure)
+  - Rancher Kubernetes ( Kubernetes + Rancher Webconsole )
+  - Red Hat OpenShift
+  - AWS ROSA - Managed Red Hat OpenShift Cluster from Amazon AWS 
+  - Azure ARO - Managed Red Hat OpenShift cluster from Microsoft Azure
 
+## Docker SWARM
+- Docker Inc's native Orchestration Platform
+- supports only Docker containerized application workloads
+- easy to install on regular laptops/desktops
+- light-weight
+- good for learning purpose, dev/qa environment
+- not used in production
 
+## Google Kubernetes
+- opensource and free Container Orchestration Platform developed and maintained by Opensource community led by Google
+- supports many different Container Runtimes - e.g Docker, containerd, Podman
+- also supports extending Kubernetes API by adding your own Custom Resources and Custom Controller
+- supports packaging Custom Resources and Custom Controllers as Kubernetes Operators to extend Custom Kubernetes additional features
+- generally Command-line only
+- there is minimal Kubernetes Dashboard (webconsole) which doesn't support user management hence result in security issue, so normally organizations disable the Kubernetes dashboard
+- Kubernetes doesn't support internal container registry out of the box, but can be configured to use external container registry
+
+## Red Hat OpenShift
+- Red Hat's Kubernetes distribution
+- Kubernetes + Many additional features developed on top of opensource Kubernetes
+- all the features supported in Kubernetes also works in OpenShift
+- OpenShift added many additional features on top of Kubernetes
+- supports CLI and Web Console(GUI)
+- comes with Internal Openshift Container Registry
+- supports CI/CD within Openshift
+- supports additional Custom Resources in Openshift
+  - DeploymentConfig
+  - Route
