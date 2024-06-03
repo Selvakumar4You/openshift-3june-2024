@@ -405,3 +405,13 @@ oc get deploy,rs,po
 
 Expected output
 ![deploy](deploy2.png)
+
+
+## Lab - Deploy nginx with bitnami image which is root-less
+```
+oc create deployment nginx --image=bitnami/nginx:latest --replicas=3
+oc get deploy,rs,po
+```
+Expected output
+![deploy](deploy3.png)
+
