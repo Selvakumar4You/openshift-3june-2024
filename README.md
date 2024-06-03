@@ -90,6 +90,9 @@ You need to login before you can start issuing oc commands in the linux terminal
 oc login -u kubeadmin https://api.ocp4.tektutor.org.labs:6443
 ```
 
+Expected output
+![login](login.png)
+
 Check if you are able to list out the nodes in the Openshift cluster
 ```
 oc get nodes
