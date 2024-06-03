@@ -88,6 +88,7 @@ cat ~/openshift.txt
 You need to login before you can start issuing oc commands in the linux terminal. You need to copy paste the password from the openshift.txt output shown above
 ```
 oc login -u kubeadmin https://api.ocp4.tektutor.org.labs:6443
+oc login -u kubeadmin https://api.ocp4.tektutor.org.labs:6443 --insecure-skip-tls-verify=true
 ```
 
 Expected output
