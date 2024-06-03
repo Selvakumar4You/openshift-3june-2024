@@ -1,5 +1,21 @@
 # Day 1
 
+## SOLID - Design Principles
+<pre>
+S - Single Responsibility Principle (SRP)
+O - Open Closed Principle (OCP)
+L - Liskov Substitution Principle (LSP)
+I - Interface Seggregation Principle
+D - Dependency Inject or Dependency Inversion or Inversion of Control (IOC)
+</pre>
+
+#### Single Responsibility Principle (SRP)
+- One Class should represent one Object/Entity
+- One Component should represent one Object
+- You are developed a Microservice in let's say springboot framework as a container
+- the microservice could write some logs in a file
+- 
+
 ## What is Boot Loader ?
 - When we boot Laptop/Desktop/Workstation/Server, the BIOS it will perform POST (Power On Self Test)
 - Once the BIOS POST operations are completed, the BIOS will instruct the CPU to load the Boot Loader utility that is installed on the Master Boot Record (MBR - Sector 0 Byte 0 on the Hard disk).
