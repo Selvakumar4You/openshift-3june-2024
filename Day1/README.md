@@ -343,3 +343,33 @@ oc project jegan
 
 Expected output
 ![project](project5.png)
+
+## Lab - Deploying nginx web server into openshift in imperative style
+```
+oc project
+oc create deployment nginx --image=nginx:latest
+```
+
+Listing the deployments within your project
+```
+oc get deployments
+oc get deployment
+oc get deploy
+```
+
+Listing the replicasets with within your project
+```
+oc get replicasets
+oc get replicaset
+oc get rs
+```
+
+Listing the pods
+```
+oc get pods
+oc get pod
+oc get po
+```
+
+Expected output
+![deploy](deploy1.png)
