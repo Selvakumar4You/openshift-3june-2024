@@ -327,3 +327,19 @@ oc get projects | grep jegan
 
 Expected output
 ![project](project4.png)
+
+## Lab - Switching between projects and finding the current active project
+To find the currently active project
+```
+oc project
+```
+
+To switch between projects
+```
+oc project jegan
+oc project default
+oc project jegan
+```
+
+Expected output
+![project](project5.png)
