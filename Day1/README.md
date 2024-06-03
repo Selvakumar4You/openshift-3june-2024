@@ -79,6 +79,19 @@
 - stand-alone tool unlike Docker
 - supports creating root-less container i.e running application as normal user ( non-admin users )
 
+## What is a Container Image?
+- is a binary file that has software pre-installed in it
+- it comes with package manager like apt(apt-get),yum,rpm,dnf,etc.,
+- containers are created using Container Image
+- Example
+  - Windows 11 ISO Disk Image,
+  - similary we have ubuntu:16.04 container image
+  - similarly we have nginx:1.18 is the Container Image that comes with nginx web server v1.18 pre-installed in it
+- When we create a nginx container using nginx:1.18 container image, the container by default runs the nginx web server within it
+- using container images, we can create any number of container
+- containers are the running instances of the container image
+- containers get an IP address
+  
 ## Container Orchestration Overview
 - though containerized application workloads can be manually managed, in real-world no organization manages containers manually
 - generally containerized applications are managed by Container Orchestration Platforms
@@ -167,3 +180,8 @@
   - an unique name
   - desired number of Pods that should be running
   - container image that must be used to deploy the Pod containers
+
+## What is a Controller?
+- is a application that runs in a infinite loop
+- it keeps looking for specific type of resources created within Openshift cluster in any namespace/project
+- it has some special permissions to monitor 
