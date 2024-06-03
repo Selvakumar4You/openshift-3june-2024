@@ -386,3 +386,22 @@ Expected output
 - ReplicaSet is one of the resource types supported by Kubernertes/Openshift.
 - ReplicaSet resource is stored inside the etcd database as a YAML document.
 - Pod resource is stored inside the etcd database as a YAML document.
+
+Troubleshooting - understanding why the nginx Pod is crashing
+<pre>
+- if you notice the deployment command, we are using nginx:latest image which works perfectly in kubernetes but not in openshift
+- in openshift, the RedHat Enterprise Linux Core OS, won't allow normal applications to do stuffs as administrators
+- the nginx Pod container, seem to attempt to create a folder under /var
+</pre>
+
+## Lab - Deleting the nginx deployment
+
+Deleting the nginx deploy, will also delete the replicaset and the respective pods. Once deleted, it can be restored/recovered.
+```
+oc get deploy
+oc delete deploy/nginx
+oc get deploy,rs,po
+```
+
+Expected output
+![deploy](deploy2.png)
