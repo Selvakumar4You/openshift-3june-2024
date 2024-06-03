@@ -396,7 +396,7 @@ Troubleshooting - understanding why the nginx Pod is crashing
 
 ## Lab - Deleting the nginx deployment
 
-Deleting the nginx deploy, will also delete the replicaset and the respective pods. Once deleted, it can be restored/recovered.
+Deleting the nginx deploy, will also delete the replicaset and the respective pods. Once deleted, it can't be restored/recovered.
 ```
 oc get deploy
 oc delete deploy/nginx
