@@ -210,5 +210,5 @@ Expected output
 </pre>
 
 Expected output
-![kubeconfig](config.png)
+![kubeconfig](kubeconfig.png)
 
