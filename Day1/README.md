@@ -292,3 +292,16 @@ oc edit node/worker-1.ocp4.tektutor.org.labs
 - it is always recommended to create a separate before we deploy our applications
 - training specific request - each user can create one project in your name
 </pre>
+
+## Lab - Listing the projects in openshift
+```
+oc get namespaces
+oc get namespace
+oc get ns
+
+oc get projects
+oc get project
+```
+
+Expected output
+[projects](project.png)
