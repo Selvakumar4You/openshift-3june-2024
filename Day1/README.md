@@ -157,6 +157,44 @@
   - controller managers
 - Worker nodes runs the user containerized application workloads
 
+## API Server
+- this is a collection of all the Kubernetes/Openshift features in the form of REST APIs
+- the client tools like oc/kubectl/kn/odo/helm will communicate to the API Server by making REST calls
+- API Server saves the cluster status and application status in the etcd key/value database
+- API Server is the only component that has access to the etcd databaase
+- all the components in openshift will only communicate to API Server
+- no two components are allowed to talk to each other directly, every communication happens only via API Server
+- API Server sends broadcasting events each time
+  - new record is inserted into the etcd database
+  - an existing is modified
+  - an existing is deleted
+    
+## etcd database
+- is an opensource key-value database used in Kubernetes/openshift
+- can be used outside the scope of kubernetes/openshift as well
+- normally works as a cluser of many etcd db nodes
+- data gets synchronized when many etcd db servers works as a cluster
+- one of the reasons why openshift recommends minimum 3 masters is due to the reason etcd requires/recommends a minimum of 3 nodes in the cluster
+
+## Scheduler
+- this is the component that is responsible to find a healthy node where a new Pod can be deployed
+- scheduler shares the scheduling recommendation about each Pod by making REST calls
+- API Server sends broadcasting events whenever a new Pod is created in the etcd database
+- API Server sends broadcasting events whenever a Pod is deleted in the etcd database
+- API Server sends broadcasting events whenever a Pod status changes ( for example -crashloop )
+
+## Controller Managers
+- this is a collection of many Controllers
+- For example
+  - Deployment Controller
+  - ReplicaSet Controller
+  - StatefulSet Controller
+  - DaemonSet Controller
+  - Job Controller
+  - CronJob Controller
+  - Endpoint Controller
+  - Storage Controller
+
 ## What is a Pod?
 - a collection of related containers
 - each container represents one application or one application component
@@ -190,6 +228,22 @@
 - For example
   - Deployment Controller can detect Deployment resources created/edited/deleted/scaled up/down in any namespace/project
   - ReplicaSet Controller can detect ReplicaSet resources created in any namespace/project
+
+## What is a Master Node in Kubernetes/Openshift?
+- In master node, control-plane components will be running
+- Control Plane
+- Control Planes components they provide the orchestration features
+- Control Planes monitors, heals, manages the user-application deployed in the openshift
+- wherever control plane components are running they are called master nodes
+- In normal configurations, the user application won't be running/scheduled into master nodes
+- In special cases, we can configure the master nodes to accept user application getting deployed into master nodes by removing the tains(conditions/restrictions)
+- In our lab setup, user application will be deployed onto master as well as worker nodes
+- master nodes are also called as controller nodes
+
+## What is a Worker Node in Kubernetes/Openshift?
+- Worker Nodes is where user applications will be deployed
+- there can any number of worker nodes
+- worker nodes are also called as compute nodes
 
 ## Lab - Listing the nodes in the Openshift cluster
 ```
