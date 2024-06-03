@@ -171,6 +171,7 @@
 - Replicaset is a resource that is stored and maintained in etcd database by API Server(Control Plane)
 - ReplicaSet tells what is the desired number of Pods that be running at any point of time within Kubernetes/OpenShift
 - ReplicaSet is managed by a controller called ReplicaSet Controller
+- Scale up/down is suppored by ReplicaSet Controller
 
 ## What is Deployment
 - Deployment is a resourced stored and maintained in etcd database by API Server
@@ -180,8 +181,12 @@
   - an unique name
   - desired number of Pods that should be running
   - container image that must be used to deploy the Pod containers
-
+- Rolling update is supported by Deployment Controller
+- 
 ## What is a Controller?
 - is a application that runs in a infinite loop
 - it keeps looking for specific type of resources created within Openshift cluster in any namespace/project
-- it has some special permissions to monitor 
+- it has some special permissions to monitor certain resources in any project/namespace
+- For example
+  - Deployment Controller can detect Deployment resources created/edited/deleted/scaled up/down in any namespace/project
+  - ReplicaSet Controller can detect ReplicaSet resources created in any namespace/project
