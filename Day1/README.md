@@ -345,6 +345,12 @@ Expected output
 ![project](project5.png)
 
 ## Lab - Deploying nginx web server into openshift in imperative style
+
+The below command will create 3 types of resources in openshift.  
+1. Deployment by name nginx
+2. ReplicaSet by nginx-<pod-template-hash>
+3. Pod ( single Pod )
+
 ```
 oc project
 oc create deployment nginx --image=nginx:latest
