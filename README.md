@@ -38,6 +38,7 @@ https://app.mymapit.in/code4/tiny/M3j7pG
 
 Note
 <pre>
+- You can copy the above pre-test url from the RPS windows cloud lab machine desktop in a file named PRE TEST
 - Copy/Paste between your laptop and rps lab machine is disabled as per your bank policy
 - You don't have to enable the camera access
 - Kindly use your personal email-id while registering ( avoid using BOFA id )
