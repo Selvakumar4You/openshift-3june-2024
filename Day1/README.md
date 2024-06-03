@@ -55,9 +55,28 @@
 - Which mean on a laptop with 4 Physical CPU Cores, you can run 1 Host OS and 7 Virtual Machine
 
 ## Docker Overview
-
+- is an application virtualization technology
+- unlinke the Hypervisor technology, this is light weight virtualization
+- why light-weight?
+  - because container's don't use dedicated hardware resources
+  - all the containers that runs on the same host machine shares the hardwares on the host OS
+  - containers are not Operating System
+  - containers doesn't have their own OS Kernel
+- containers get's their own IP Address
+- each container represents one application or one application component ( backend, frontend, web/app server, db server, etc )
+- each container runs in a separate namespace
+- containers are otherwise a normal application process
+- Docker comes 2 flavours
+  1. Docker Community Edition - Docker CE
+  2. Docker Enterprise Edition - Docker EE
+- Docker is developed in Go language by the company Docker Inc
+- follows client/server architecture
+- the server runs in the OS Kernel context (administrator), hence most container we create we will gain admin access within the containers, even in the case the user who created the container is a non-admin user
 ## Podman Overview
-
+- Podman is alternate to Docker
+- Podman is also opensource maintained by Community headed by Red Hat
+- stand-alone tool unlike Docker
+- supports creating root-less container i.e running application as normal user ( non-admin users )
 ## Container Orchestration Overview
 
 
