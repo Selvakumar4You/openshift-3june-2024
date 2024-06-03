@@ -304,7 +304,7 @@ oc get project
 ```
 
 Expected output
-[projects](project1.png)
-[projects](project2.png)
+![projects](project1.png)
+![projects](project2.png)
 
 
