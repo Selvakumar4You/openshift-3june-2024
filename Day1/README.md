@@ -356,21 +356,21 @@ oc project
 oc create deployment nginx --image=nginx:latest
 ```
 
-Listing the deployments within your project
+Listing the deployments within your project. 
 ```
 oc get deployments
 oc get deployment
 oc get deploy
 ```
 
-Listing the replicasets with within your project
+Listing the replicasets with within your project. 
 ```
 oc get replicasets
 oc get replicaset
 oc get rs
 ```
 
-Listing the pods
+Listing the pods. Pod is one of the resource types supported by Kubernertes/Openshift.  Within Pod, nginx container will be running.
 ```
 oc get pods
 oc get pod
@@ -379,3 +379,10 @@ oc get po
 
 Expected output
 ![deploy](deploy1.png)
+
+### Things to note
+- Deployment is one of the resource types supported by Kubernertes/Openshift.  
+- Deployment resource is stored inside the etcd database as a YAML document.
+- ReplicaSet is one of the resource types supported by Kubernertes/Openshift.
+- ReplicaSet resource is stored inside the etcd database as a YAML document.
+- Pod resource is stored inside the etcd database as a YAML document.
