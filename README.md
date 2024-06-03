@@ -80,6 +80,16 @@ Client Version: version.Info{Major:"1", Minor:"27", GitVersion:"v1.27.4", GitCom
 Kustomize Version: v5.0.1  
 </pre>
 
+You can print the openshift login credentials as shown below
+```
+cat ~/openshift.txt
+```
+
+You need to login before you can start issuing oc commands in the linux terminal. You need to copy paste the password from the openshift.txt output shown above
+```
+oc login -u kubeadmin https://api.ocp4.tektutor.org.labs:6443
+```
+
 Check if you are able to list out the nodes in the Openshift cluster
 ```
 oc get nodes
