@@ -316,3 +316,14 @@ Expected output
 ![project](project3.png)
 
 
+## Lab - Deleting a project
+
+When we delete a project, it deletes all the resources under the project.  There is no way to recover/restore it once deleted.
+```
+oc get projects | grep jegan
+oc delete project/jegan
+oc get projects | grep jegan
+```
+
+Expected output
+![project](project4.png)
