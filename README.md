@@ -33,6 +33,7 @@ cd openshift-3june-2024
 
 ## Pre-test - kindly complete the pre-test from your RPS Lab machine
 <pre>
+https://app.mymapit.in/code4/tiny/M3j7pG
 </pre>
 
 Note
