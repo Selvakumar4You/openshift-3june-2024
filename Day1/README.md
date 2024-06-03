@@ -200,3 +200,15 @@ oc get nodes -o wide
 Expected output
 ![nodes](node1.png)
 ![nodes](node2.png)
+
+## Info - How the oc or kubectl learns the connection details to openshift cluster
+<pre>
+- In the user home directory, there is hidden .kube folder which has the config file
+- In my case, /home/jegan/.kube/config is the location oc or kubectl will first search for the config file
+- It is also possible we could export an environment variable KUBECONFIG to point to the location of the config file
+- An alternate approach is to supply a switch in the command-line to point the config file location
+</pre>
+
+Expected output
+![kubeconfig](config.png)
+
