@@ -242,7 +242,8 @@ D - Dependency Inject or Dependency Inversion or Inversion of Control (IOC)
   - desired number of Pods that should be running
   - container image that must be used to deploy the Pod containers
 - Rolling update is supported by Deployment Controller
-- 
+![deployment](deployment.png)
+
 ## What is a Controller?
 - is a application that runs in a infinite loop
 - it keeps looking for specific type of resources created within Openshift cluster in any namespace/project
