@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    app: nginx
+    pod-template-hash: rs 
+  name: nginx-rs
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx
+      pod-template-hash: rs 
+  template:
+    metadata:
+      labels:
+        app: nginx
+        pod-template-hash: rs 
+    spec:
+      containers:
+      - image: bitnami/nginx:1.18
+        imagePullPolicy: IfNotPresent
+        name: nginx
