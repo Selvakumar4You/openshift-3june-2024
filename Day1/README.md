@@ -438,3 +438,20 @@ oc get deploy,rs,po
 Expected output
 ![deploy](deploy3.png)
 
+
+## Lab - Port-forwarding for developer testing
+In the below command, the port 9080 is exposed on the local machine, while 8080 is the port used with the container by nginx web server.
+```
+oc get po
+oc scale deploy/nginx --replicas=3
+oc get po
+oc port-forward pod/nginx-566b5879cb-566v9 9080:8080
+```
+
+From another terminal, we can access the web page served by the nginx pod container
+```
+curl http://localhost:9080
+```
+Expected output
+![port-forward](port-forward1.png)
+![port-forward](port-forward2.png)
