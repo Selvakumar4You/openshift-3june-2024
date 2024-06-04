@@ -208,6 +208,8 @@ cd Day2/declarative-manifest-scripts
 ls -l
 oc apply -f nginx-deploy.yml
 oc apply -f nginx-clusterip-svc.yml
+oc expose svc/nginx -o yaml --dry-run=client
+oc expose svc/nginx -o yaml --dry-run=client > nginx-route.yml
 oc apply -f nginx-route.yml
 
 oc get route
