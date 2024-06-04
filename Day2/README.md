@@ -170,3 +170,27 @@ Expected output
 ![replicaset](rs.png)
 ![replicaset](rs1.png)
 ![replicaset](rs2.png)
+
+
+## Lab - Creating a pod in declaratively style without replicaset and deployment
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day2/declarative-manifest-scripts
+cat pod.yml
+oc apply -f pod.yml
+oc get pod
+```
+Expected output
+![pod](pod.png)
+
+Once you are done with this exercise, you may delete the pod declaratively as shown below
+```
+cd ~/openshift-3june-2024
+cd Day2/declarative-manifest-scripts
+oc delete -f pod.yml
+oc get pod
+```
+
+Expected output
+![pod](pod1.png)
