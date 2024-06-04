@@ -9,7 +9,6 @@ spec:
   selector:
     matchLabels:
       app: nginx
-      ver: 1.18
   template:
     metadata:
       labels:
