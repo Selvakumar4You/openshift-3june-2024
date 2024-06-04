@@ -524,3 +524,11 @@ Expected output
 - as we open more ports in the cluster, it is vulnerable for attacks
 - the openshift solution for these problem is to use route
 </pre>
+
+
+## Lab - Creating a LoadBalancer external service
+
+In order to support loadbalancer service in a on-prem setup, we need to install MetalLB operator.  You may refer the instructions here
+<pre>
+https://medium.com/tektutor/using-metallb-loadbalancer-with-bare-metal-openshift-onprem-4230944bfa35  
+</pre>
