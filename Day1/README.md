@@ -478,6 +478,7 @@ curl http://nginx:8080
 curl http://172.30.77.200:8080
 cat /etc/resolv.conf
 ```
+In the above curl, the IP address 172.30.77.200 is the nginx service IP in my case. The nginx in the first curl command refers to the nginx service name.  The default DNS service(172.30.0.10) resolves nginx service name to the IP address 172.30.77.200, aka Service Discovery.
 
 Expected output
 ![clusterip](clusterip1.png)
