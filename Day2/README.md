@@ -26,3 +26,55 @@ ls
 
 Expected output
 ![service](service.png)
+
+## Lab - Creating clusterip internal service in declarative style
+```
+oc expose deploy/nginx --type=ClusterIP --port=8080 -o yaml --dry-run=client > nginx-clusterip-svc.yml
+ls -l
+oc apply -f nginx-clusterip-svc.yml
+oc get svc
+```
+
+You can also delete the service in declarative style
+```
+oc delete -f nginx-clusterip-svc.yml
+oc get svc
+```
+Expected output
+[service](service1.png)
+
+
+## Lab - Creating nodeport external service in declarative style
+```
+oc expose deploy/nginx --type=NodePort --port=8080 -o yaml --dry-run=client > nginx-nodeport-svc.yml
+ls -l
+oc apply -f nginx-nodeport-svc.yml
+oc get svc
+```
+
+You can also delete the service in declarative style
+```
+oc delete -f nginx-nodeport-svc.yml
+oc get svc
+```
+Expected output
+[service](service1.png)
+
+
+## Lab - Creating loadbalancer external service in declarative style
+```
+oc expose deploy/nginx --type=LoadBalancer --port=8080 -o yaml --dry-run=client > nginx-lb-svc.yml
+ls -l
+oc apply -f nginx-lb-svc.yml
+oc get svc
+```
+
+You can also delete the service in declarative style
+```
+oc delete -f nginx-lb-svc.yml
+oc get svc
+```
+
+Expected output
+[service](service1.png)
+
