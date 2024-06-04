@@ -514,3 +514,13 @@ Expected output
 ![nodeport](nodeport1.png)
 ![nodeport](nodeport2.png)
 ![nodeport](nodeport3.png)
+
+
+## Info - Drawbacks of using NodePort service
+<pre>
+- NodePort isn't end-user friendly as the end-user has to know the node ip or the node hostname in order to access the service
+- it is not developer friendly as well as the dev environment openshift may have a single node openshift cluster while in prod environment the openshift cluster may have many nodes, hence the way we access the nodeport in different clusters for the same application will vary
+- from the security point of view, the nodeport forces us to open up a single port on every node for a nodeport service.  If we have to create 10 nodeport services for different microservice then we end opening 10 ports on each of the nodes in the openshift cluster
+- as we open more ports in the cluster, it is vulnerable for attacks
+- the openshift solution for these problem is to use route
+</pre>
