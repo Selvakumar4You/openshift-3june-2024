@@ -238,3 +238,15 @@ oc get deploy,svc,route
 
 Expected output
 ![route](route1.png)
+
+## Lab - Deploying an application in declarative style from Webconsole in developer context
+![webconsole](webconsole1.png)
+![webconsole](webconsole2.png)
+![webconsole](webconsole3.png)
+![webconsole](webconsole4.png)
+![webconsole](webconsole5.png)
+![webconsole](webconsole6.png)
+![webconsole](webconsole7.png)
+![webconsole](webconsole8.png)
+![webconsole](webconsole9.png)
+![webconsole](webconsole10.png)
