@@ -455,3 +455,31 @@ curl http://localhost:9080
 Expected output
 ![port-forward](port-forward1.png)
 ![port-forward](port-forward2.png)
+
+To stop the port-forward, you need to press Ctrl + C.  Once stopped the page won't be accessible.  This technique must be used only for testing purpose and not used in production.
+
+For production use, we need to use services and routes.
+
+## Lab - Creating an internal service for nginx deployment
+```
+oc get deploy,po
+oc expose deploy/nginx --type=ClusterIP --port=8080
+oc get services
+oc get service
+oc get svc
+oc describe svc/nginx
+```
+
+In order to access the service, we need to get inside some pod shell
+```
+oc exec -it pod/nginx-566b5879cb-tcpx8 sh
+ls
+curl http://nginx:8080
+curl http://172.30.77.200:8080
+cat /etc/resolv.conf
+```
+
+Expected output
+![clusterip](clusterip1.png)
+![clusterip](clusterip2.png)
+![clusterip](clusterip3.png)
