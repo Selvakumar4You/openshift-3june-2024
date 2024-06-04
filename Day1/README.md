@@ -225,6 +225,7 @@ D - Dependency Inject or Dependency Inversion or Inversion of Control (IOC)
 - hence, every container that is part of the same Pod shares the same IP address
 - Pod is yaml/json resource that lives in etcd database
 - the containers associated to the Pod runs in any nodes within the Openshift cluster
+![pod][pod.png]
 
 ## What is ReplicaSet?
 - Replicaset is a resource that is stored and maintained in etcd database by API Server(Control Plane)
