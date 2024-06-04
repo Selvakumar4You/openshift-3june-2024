@@ -182,5 +182,13 @@ oc apply -f pod.yml
 oc get pod
 ```
 
+Once you are done with this exercise, you may delete the pod declaratively as shown below
+```
+cd ~/openshift-3june-2024
+cd Day2/declarative-manifest-scripts
+oc delete -f pod.yml
+oc get pod
+```
+
 Expected output
 ![pod](pod.png)
