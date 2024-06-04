@@ -302,3 +302,49 @@ Expected output
 - Administrators can also provision the Persistent Volume(PV) on demand in a dynamic fashion by creating storage class
 - For every type of storage, we need to create a separate storage class
 </pre>
+
+
+## Lab - Deploying mariadb database server using its internal storage to store database, tables, etc
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day2/persistent-volume
+oc create deployment mariadb --image=bitnami/nginx:latest -o yaml --dry-run=client
+oc create deployment mariadb --image=bitnami/nginx:latest -o yaml --dry-run=client > mariadb-deploy.yml
+cat mariadb-deploy.yml
+
+oc apply -f mariadb-deploy.yml
+oc get deploy,po
+```
+
+Getting inside the mariadb pod container shell. When prompts for password type 'root@123' as password without quotes.
+```
+oc rsh deploy/mariadb
+hostname
+hostname -i
+mysql -u root -p
+SHOW DATABASES;
+
+CREATE DATABASE tektutor;
+
+USE tektutor;
+
+CREATE TABLE training ( id INT NOT NULL, name VARCHAR(250) NOT NULL, duration VARCHAR(250) NOT NULL, PRIMARY KEY(id));
+
+INSERT INTO training VALUES ( 1, "DevOps", "5 Days" );
+SELECT * FROM training;
+```
+
+Expected output
+![mariadb](mariadb1.png)
+![mariadb](mariadb2.png)
+![mariadb](mariadb3.png)
+![mariadb](mariadb4.png)
+![mariadb](mariadb5.png)
+![mariadb](mariadb6.png)
+![mariadb](mariadb7.png)
+![mariadb](mariadb8.png)
+![mariadb](mariadb9.png)
+![mariadb](mariadb10.png)
+![mariadb](mariadb11.png)
+![mariadb](mariadb12.png)
