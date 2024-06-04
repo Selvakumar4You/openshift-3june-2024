@@ -111,3 +111,31 @@ oc get po
 Expected output
 ![scale-down](scaled-down1.png)
 ![scale-down](scale-down.png)
+
+## Lab - Rolling update to upgrade your live application from one version to other without any downtime
+You need to edit nginx-deploy.yml and update the image version from 1.18 to 1.19, save it and apply
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day2/declarative-manifest-scripts
+cat nginx-deploy.yml
+oc apply -f nginx-deploy.yml
+```
+
+To check the status of rolling update
+```
+oc rollout status deploy/nginx
+oc rollout history deploy/nginx
+```
+
+To rollback to previous version
+```
+oc rollout undo deploy/nginx
+```
+
+Expected output
+![rolling-update](rolling-update1.png)
+![rolling-update](rolling-update2.png)
+![rolling-update](rolling-update3.png)
+![rolling-update](rolling-update4.png)
+![rolling-update](rolling-update5.png)
