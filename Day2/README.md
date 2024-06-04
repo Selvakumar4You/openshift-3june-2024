@@ -78,3 +78,36 @@ oc get svc
 Expected output
 ![service](service1.png)
 
+
+## Lab - Scaling up/down deployment in declarative style
+
+Scale up the nginx deployment from 3 pods to 5 pods.  You need to edit the nginx-deploy.yml file, replace the replicas from 3 to 5, save and apply as shown below.
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day2/declarative-manifest-scripts
+cat nginx-deploy.yml
+oc get po
+oc apply -f nginx-deploy.yml
+oc get po
+```
+
+Expected output
+![scale-up](scale-up1.png)
+![scale-up](scale-up.png)
+
+
+Scale down the nginx deployment from 5 pods to 3 pods.  You need to edit the nginx-deploy.yml file, replace the replicas from 5 to 3, save and apply as shown below.
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day2/declarative-manifest-scripts
+cat nginx-deploy.yml
+oc get po
+oc apply -f nginx-deploy.yml
+oc get po
+```
+
+Expected output
+![scale-down](scale-down1.png)
+![scale-down](scale-down.png)
