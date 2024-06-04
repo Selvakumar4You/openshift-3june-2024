@@ -139,3 +139,34 @@ Expected output
 ![rolling-update](rolling-update3.png)
 ![rolling-update](rolling-update4.png)
 ![rolling-update](rolling-update5.png)
+
+## Lab - Creating a replicaset in declarative style without deployment
+First let's delete any deployment running
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day2/declarative-manifest-scripts
+oc delete -f nginx-deploy.yml
+```
+
+Let's create the replicaset
+```
+cd ~/openshift-3june-2024
+cd Day2/declarative-manifest-scripts
+cat nginx-rs.yml
+oc apply -f nginx-rs
+oc get deploy,rs,po
+```
+
+Once you are done, you may delete the replicaset declaratively
+```
+cd ~/openshift-3june-2024
+cd Day2/declarative-manifest-scripts
+oc delete -f nginx-rs
+oc get rs,po
+```
+
+Expected output
+![replicaset](rs.png)
+![replicaset](rs1.png)
+![replicaset](rs2.png)
