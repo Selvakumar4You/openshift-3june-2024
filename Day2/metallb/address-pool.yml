@@ -1,0 +1,9 @@
+apiVersion: metallb.io/v1alpha1
+kind: AddressPool
+metadata:
+  namespace: metallb-system
+  name: tektutor-metallb-addresspool
+spec:
+  protocol: layer2
+  addresses:
+  - 192.168.122.90-192.168.122.100
