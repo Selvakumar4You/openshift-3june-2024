@@ -532,3 +532,38 @@ In order to support loadbalancer service in a on-prem setup, we need to install 
 <pre>
 https://medium.com/tektutor/using-metallb-loadbalancer-with-bare-metal-openshift-onprem-4230944bfa35  
 </pre>
+
+First let's delete the nodeport service
+```
+oc get svc
+oc delete svc/nginx
+```
+
+Let's create a loadbalancer service for the nginx deployment
+```
+oc get deploy,po
+oc expose deploy/nginx --type=LoadBalancer --port=8080
+```
+
+List the service
+```
+oc get svc
+oc describe svc/nginx
+```
+
+Accessing the service
+```
+curl http://<external-ip-shown-in-loadbalancer-service>:8080
+```
+
+Expected output
+![lb](lb1.png)
+![lb](metal1.png)
+![lb](metal1.png)
+![lb](metal2.png)
+![lb](metal3.png)
+![lb](metal4.png)
+![lb](metal5.png)
+![lb](metal6.png)
+![lb](metal7.png)
+![lb](lb2.png)
