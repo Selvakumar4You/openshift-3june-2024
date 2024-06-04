@@ -484,3 +484,33 @@ Expected output
 ![clusterip](clusterip1.png)
 ![clusterip](clusterip2.png)
 ![clusterip](clusterip3.png)
+
+
+## Lab - Creating an external nodeport service
+First we need to delete the clusterip service we created earlier
+```
+oc get svc
+oc delete svc/nginx
+```
+
+Let's create the nodeport service for nginx deployment
+```
+oc expose deploy/nginx --type=NodePort --port=8080
+oc get svc
+oc describe svc/nginx
+```
+
+We can access the nodeport service using any one of the Node IP or the node hostnames
+```
+oc get nodes
+curl http://master-1.ocp4.tektutor.org.labs:31976
+curl http://master-2.ocp4.tektutor.org.labs:31976
+curl http://master-3.ocp4.tektutor.org.labs:31976
+curl http://worker-1.ocp4.tektutor.org.labs:31976
+curl http://worker-2.ocp4.tektutor.org.labs:31976
+```
+
+Expected output
+![nodeport](nodeport1.png)
+![nodeport](nodeport2.png)
+![nodeport](nodeport3.png)
