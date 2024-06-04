@@ -109,5 +109,5 @@ oc get po
 ```
 
 Expected output
-![scale-down](scale-down1.png)
+![scale-down](scaled-down1.png)
 ![scale-down](scale-down.png)
