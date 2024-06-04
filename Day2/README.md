@@ -259,3 +259,13 @@ Expected output
 ![webconsole](web-service5.png)
 ![webconsole](web-service6.png)
 ![webconsole](web-service7.png)
+
+## Lab - Create a route in declarative style from webconsole in developer context
+![webconsole](web-route1.png)
+![webconsole](web-route2.png)
+![webconsole](web-route3.png)
+![webconsole](web-route4.png)
+![webconsole](web-route5.png)
+![webconsole](web-route6.png)
+![webconsole](web-route7.png)
+![webconsole](web-route8.png)
