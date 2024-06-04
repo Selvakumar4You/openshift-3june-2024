@@ -181,6 +181,8 @@ cat pod.yml
 oc apply -f pod.yml
 oc get pod
 ```
+Expected output
+![pod](pod.png)
 
 Once you are done with this exercise, you may delete the pod declaratively as shown below
 ```
@@ -191,4 +193,4 @@ oc get pod
 ```
 
 Expected output
-![pod](pod.png)
+![pod](pod1.png)
