@@ -41,7 +41,7 @@ oc delete -f nginx-clusterip-svc.yml
 oc get svc
 ```
 Expected output
-[service](service1.png)
+![service](service1.png)
 
 
 ## Lab - Creating nodeport external service in declarative style
@@ -58,7 +58,7 @@ oc delete -f nginx-nodeport-svc.yml
 oc get svc
 ```
 Expected output
-[service](service1.png)
+![service](service1.png)
 
 
 ## Lab - Creating loadbalancer external service in declarative style
@@ -76,5 +76,5 @@ oc get svc
 ```
 
 Expected output
-[service](service1.png)
+![service](service1.png)
 
