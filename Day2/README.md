@@ -222,3 +222,19 @@ curl http://nginx-jegan.apps.ocp4.tektutor.org.labs
 
 Expected output
 ![route](route.png)
+
+Once you are done with this exercise, you may delete the resources as shown below
+```
+cd ~/openshift-3june-2024
+cd Day2/declarative-manifest-scripts
+ls -l
+
+oc get deploy,svc,route
+oc delete -f nginx-route.yml
+oc delete -f nginx-clusterip-svc.yml
+oc delete -f nginx-deploy.yml
+oc get deploy,svc,route
+```
+
+Expected output
+![route](route1.png)
