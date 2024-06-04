@@ -250,3 +250,12 @@ Expected output
 ![webconsole](webconsole8.png)
 ![webconsole](webconsole9.png)
 ![webconsole](webconsole10.png)
+
+## Lab - Create a clusterip service in declarative style from webconsole in developer context
+![webconsole](web-service1.png)
+![webconsole](web-service2.png)
+![webconsole](web-service3.png)
+![webconsole](web-service4.png)
+![webconsole](web-service5.png)
+![webconsole](web-service6.png)
+![webconsole](web-service7.png)
