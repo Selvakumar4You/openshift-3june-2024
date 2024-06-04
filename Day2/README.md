@@ -194,3 +194,29 @@ oc get pod
 
 Expected output
 ![pod](pod1.png)
+
+## Lab - Creating a route to expose the clusterip service with a convenient public url
+As we discussed, the nodeport service is neither end-user friendly nor developer friendly. Also it forces us to open ports in the firewall it leads to security issues.
+
+Route is the solution to the nodeport service issues.  
+
+Let's create a route
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day2/declarative-manifest-scripts
+ls -l
+oc apply -f nginx-deploy.yml
+oc apply -f nginx-clusterip-svc.yml
+oc apply -f nginx-route.yml
+
+oc get route
+```
+
+You may access the route as shown below
+```
+curl http://nginx-jegan.apps.ocp4.tektutor.org.labs
+```
+
+Expected output
+![route](route.png)
