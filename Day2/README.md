@@ -269,3 +269,36 @@ Expected output
 ![webconsole](web-route6.png)
 ![webconsole](web-route7.png)
 ![webconsole](web-route8.png)
+
+## Info - What is Persistent Volume (PV) ?
+<pre>
+- is an external storage used by application deployed in Kubernetes/Openshift
+- Persistent volumes are created in the cluster scope, to allow application running from any project namespace to claim them
+- Administrators can provision the Persistent Volume from various storage solutions manually or dynamically
+  - NFS
+  - AWS EBS
+  - AWS S3
+  - Azure Storage
+- When Persistent Volumes are created by Administrators, they will have define
+  - Mandatory field - size/capacity of the storage
+  - Mandatory field - access mode ( ReadWriteOnce, ReadWriteMany, etc., )
+  - Storage Class - optional
+  - labels - optional but recommended
+</pre>
+
+## Info - What is Persistent Volume Claim (PVC) ?
+<pre>
+- Any application that requires external storage has to request for external storage by creating a Persistent volume claim
+- Unless the Pod that expects the external get a PV matching the PVC criteria is found, the Pod will remain in the Pending state only 
+- The PVC has mention certain fields
+  - size of the storage (mandatory)
+  - access mode (mandatory)
+  - storage class (optional)
+  - label selector ( optional )
+</pre>
+
+## Info - What is Storage Class ?
+<pre>
+- Administrators can also provision the Persistent Volume(PV) on demand in a dynamic fashion by creating storage class
+- For every type of storage, we need to create a separate storage class
+</pre>
