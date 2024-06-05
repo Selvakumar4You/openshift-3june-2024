@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wordpress-cm
+data:
+  db_host: mariadb
+  db_name: wordpress
+  db_port: "3306"
+
