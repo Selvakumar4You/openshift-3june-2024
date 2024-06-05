@@ -51,3 +51,21 @@ Expected output
 ![mongodb](mongodb4.png)
 ![mongodb](mongodb5.png)
 ![mongodb](mongodb6.png)
+
+## Lab - Deploying redis database with persistent volume
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day3/persistent-volume/redis
+
+oc apply -f redis-pv.yml
+oc apply -f redis-pvc.yml
+oc apply -f redis-deploy.yml
+```
+
+Expectd output
+![redis](redis1.png)
+![redis](redis2.png)
+![redis](redis3.png)
+![redis](redis4.png)
+![redis](redis5.png)
