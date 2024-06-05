@@ -403,6 +403,9 @@ Expected output
 ![mariadb](maria5.png)
 ![mariadb](maria6.png)
 ![mariadb](maria7.png)
+![mariadb](maria9.png)
+![mariadb](maria10.png)
+![mariadb](maria11.png)
 
 Once you are done with this exercise, you may delete the mariadb and related pv and pvc to freeup resources.
 ```
