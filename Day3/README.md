@@ -69,3 +69,18 @@ Expectd output
 ![redis](redis3.png)
 ![redis](redis4.png)
 ![redis](redis5.png)
+
+You may delete the redis deployment once you are done with this exercise.
+```
+cd ~/openshift-3june-2024
+cd Day3/persistent-volume/redis
+
+oc delete -f redis-deploy.yml
+oc delete -f redis-pvc.yml
+oc delete -f redis-pv.yml
+
+oc get po,pv,pvc
+```
+
+Expected output
+![redis](redis6.png)
