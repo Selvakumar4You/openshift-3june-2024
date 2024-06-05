@@ -87,6 +87,19 @@ Expected output
 
 
 ## Lab - Using configmap and secrets to store configuration data and credentials in secrets
+
+#### Things to note
+<pre>
+- config map is used to store non-sensitive data
+- config map can store many key/value pairs
+- For example
+  - We can store the JAVA_HOME=/usr/lib/jdk11 path 
+  - We can store application log path
+- secret is also a map that can store several key pairs
+- the only difference between configmap and secret is , the values stores in secrets is opaque, hence we can securely store passwords, retrieve them on need basis and use them in our application
+</pre>
+
+Let's understand how to practically use configmap and secrets in the wordpress & mariadb deployments
 ```
 cd ~/openshift-3june-2024
 git pull
