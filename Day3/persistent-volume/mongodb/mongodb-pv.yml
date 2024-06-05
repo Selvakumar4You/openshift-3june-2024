@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongodb-pv-jegan #Replace 'jegan' with your name
+  labels:
+    name: jegan #Replace 'jegan' with your name
+spec:
+  capacity:
+    storage: 100Mi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 192.168.1.108 #Replace this IP address with 10.10.15.101 or 10.10.15.102 or 10.10.15.103 based on which linux server you are connected 
+    path: /var/nfs/jegan/mongodb #Replace this path with your path /var/nfs/user15/mongodb
