@@ -90,7 +90,7 @@ Expected output
 ```
 cd ~/openshift-3june-2024
 git pull
-cd Day3/configs-and-secrets
+cd Day3/configs-and-secrets/wordpress
 
 ./deploy.sh
 oc get po,pv,pvc,svc,route
