@@ -32,3 +32,22 @@ cd Day3/persistent-volume/wordpress
 
 Expected output
 ![wordpress](wordpress8.png)
+
+## Lab - Deploying mongodb with Persistent volume
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day3/persistent-volume/mongodb
+
+oc apply -f mongodb-pv.yml
+oc apply -f mongodb-pvc.yml
+oc apply -f mongodb-deploy.yml
+```
+
+Expected output
+![mongodb](mongodb1.png)
+![mongodb](mongodb2.png)
+![mongodb](mongodb3.png)
+![mongodb](mongodb4.png)
+![mongodb](mongodb5.png)
+![mongodb](mongodb6.png)
