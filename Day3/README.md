@@ -84,3 +84,22 @@ oc get po,pv,pvc
 
 Expected output
 ![redis](redis6.png)
+
+
+## Lab - Using configmap and secrets to store configuration data and credentials in secrets
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day3/configs-and-secrets
+
+./deploy.sh
+oc get po,pv,pvc,svc,route
+```
+
+Expected output
+![cm](cm1.png)
+![cm](cm2.png)
+![cm](cm3.png)
+![cm](cm4.png)
+![cm](cm5.png)
+![cm](cm6.png)
