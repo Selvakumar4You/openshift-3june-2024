@@ -17,3 +17,14 @@ Expected output
 ![wordpress](wordpress5.png)
 ![wordpress](wordpress6.png)
 ![wordpress](wordpress7.png)
+
+Once you are done with this exercise, you may clean up the resources
+```
+cd ~/openshift-3june-2024
+cd Day3/persistent-volume/wordpress
+
+./delete-all.sh
+```
+
+Expected output
+![wordpress](wordpress8.png)
