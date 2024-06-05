@@ -305,6 +305,7 @@ Expected output
 
 
 ## Lab - Deploying mariadb database server using its internal storage to store database, tables, etc
+
 ```
 cd ~/openshift-3june-2024
 git pull
@@ -348,3 +349,74 @@ Expected output
 ![mariadb](mariadb10.png)
 ![mariadb](mariadb11.png)
 ![mariadb](mariadb12.png)
+
+## Lab - Mariadb with Persistent Volume
+Let's delete the existing mariadb deployment
+```
+oc delete deploy/mariadb
+```
+
+Now, let's deploy mariadb with PV and PVC
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day2/persistent-volume
+ls -l
+oc apply -f mariadb-pv.yml
+oc apply -f mariadb-pvc.yml
+oc apply -f mariadb-deploy.yml
+
+oc get po,pv,pvc
+```
+
+Let's get inside the mariadb pod shell, when prompts for password type 'root@123' without quotes
+```
+oc rsh deploy/mariadb
+mysql -u root -p
+SHOW DATABASES;
+CREATE DATABASE tektutor;
+USE tektutor;
+CREATE TABLE training ( id INT NOT NULL, name VARCHAR(250) NOT NULL, duration VARCHAR(250) NOT NULL, PRIMARY KEY(id));
+
+INSERT INTO training VALUES ( 1, "Openshift", "5 days" );
+SELECT * FROM training;
+exit
+exit
+```
+
+Now, let's delete the mariadb pod, openshift will automatically redepoloy a new mariadb pod.
+Let's get inside the new mariadb pod
+```
+oc rsh deploy/mariadb
+mysql -u root -p
+SHOW DATABASES;
+USE tektutor;
+SELECT * FROM training;
+```
+You are expected to see the tektutor database and training table intact with all the records we inserted via the old mariadb pod we deleted. This is made possible with the help of external Persistent Volume.
+
+Expected output
+![mariadb](maria1.png)
+![mariadb](maria2.png)
+![mariadb](maria3.png)
+![mariadb](maria4.png)
+![mariadb](maria5.png)
+![mariadb](maria6.png)
+![mariadb](maria7.png)
+![mariadb](maria9.png)
+![mariadb](maria10.png)
+![mariadb](maria11.png)
+
+Once you are done with this exercise, you may delete the mariadb and related pv and pvc to freeup resources.
+```
+cd ~/openshift-3june-2024
+cd Day2/persistent-volume
+
+oc delete -f mariadb-deploy.yml
+oc delete -f mariadb-pvc.yml
+oc delete -f mariadb-pv.yml
+```
+If you noticed above, we have to delete the resources in the reverse order.  While deploying mariadb, we would have created the pv first, followed by pvc and then the deployment at the last, while deleting we need to follow reverse order to save time.
+
+Expected output
+![mariadb](maria8.png)
