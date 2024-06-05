@@ -1,0 +1,6 @@
+wordpress_nfs_path: /var/nfs/jegan/wordpress
+mariadb_nfs_path: /var/nfs/jegan/wordpress
+wordpress_pv_size: "100Mi"
+mariadb_pv_size: "100Mi"
+pv_label: "jegan"
+nfs_ip: "192.168.1.108"
