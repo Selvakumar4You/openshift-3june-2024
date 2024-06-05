@@ -394,3 +394,12 @@ USE tektutor;
 SELECT * FROM training;
 ```
 You are expected to see the tektutor database and training table intact with all the records we inserted via the old mariadb pod we deleted. This is made possible with the help of external Persistent Volume.
+
+Expected output
+![mariadb](maria1.png)
+![mariadb](maria2.png)
+![mariadb](maria3.png)
+![mariadb](maria4.png)
+![mariadb](maria5.png)
+![mariadb](maria6.png)
+![mariadb](maria7.png)
