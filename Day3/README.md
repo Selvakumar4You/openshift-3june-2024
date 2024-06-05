@@ -87,10 +87,23 @@ Expected output
 
 
 ## Lab - Using configmap and secrets to store configuration data and credentials in secrets
+
+#### Things to note
+<pre>
+- config map is used to store non-sensitive data
+- config map can store many key/value pairs
+- For example
+  - We can store the JAVA_HOME=/usr/lib/jdk11 path 
+  - We can store application log path
+- secret is also a map that can store several key pairs
+- the only difference between configmap and secret is , the values stores in secrets is opaque, hence we can securely store passwords, retrieve them on need basis and use them in our application
+</pre>
+
+Let's understand how to practically use configmap and secrets in the wordpress & mariadb deployments
 ```
 cd ~/openshift-3june-2024
 git pull
-cd Day3/configs-and-secrets
+cd Day3/configs-and-secrets/wordpress
 
 ./deploy.sh
 oc get po,pv,pvc,svc,route
@@ -103,3 +116,25 @@ Expected output
 ![cm](cm4.png)
 ![cm](cm5.png)
 ![cm](cm6.png)
+
+Once you are done with this lab exercise, you may clean up the resources as shown below
+```
+cd ~/openshift-3june-2024
+cd Day3/configs-and-secrets/wordpress
+
+./delete-all.sh
+oc get po,pv,pvc,svc,route
+```
+
+Expected output
+![cm](cm7.png)
+
+
+## Info - Helm Overview
+<pre>
+- Helm is a package manager that can be used to package your kubernetes/openshift cloud native applications
+- Just like package managers like apt(apt-get), yum, rpm, dnf, npm, pip are used to install,uninstall, update/upgrade softwares, we can use Helm package manager to install/uninstall/upgrade applications into Kubernetes/Openshift
+- Helm is also intergrated with Openshift
+- Helm packaged applications are called Charts
+- Helm chart is a tar.gz compressed that follows a specific folder structure within the compressed file
+</pre>
