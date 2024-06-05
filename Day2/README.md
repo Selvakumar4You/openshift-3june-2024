@@ -414,3 +414,6 @@ oc delete -f mariadb-pvc.yml
 oc delete -f mariadb-pv.yml
 ```
 If you noticed above, we have to delete the resources in the reverse order.  While deploying mariadb, we would have created the pv first, followed by pvc and then the deployment at the last, while deleting we need to follow reverse order to save time.
+
+Expected output
+![mariadb](maria8.png)
