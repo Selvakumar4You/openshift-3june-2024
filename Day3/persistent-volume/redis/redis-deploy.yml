@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: redis
+  name: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      volumes:
+      - name: redis-storage
+        persistentVolumeClaim:
+          claimName: redis-pvc-jegan #Replace 'jegan' with your name
+
+      containers:
+      - image: bitnami/redis:latest
+        name: redis
+        imagePullPolicy: IfNotPresent
+
+        volumeMounts:
+        - name: redis-storage
+          mountPath: /bitnami/redis/data
+        env:
+        - name: REDIS_PASSWORD
+          value: root@123
