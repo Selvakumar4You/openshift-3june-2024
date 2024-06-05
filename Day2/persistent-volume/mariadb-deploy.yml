@@ -14,9 +14,19 @@ spec:
       labels:
         app: mariadb
     spec:
+      volumes:
+      - name: mariadb-storage
+        persistentVolumeClaim:
+          claimName: mariadb-pvc-jegan #Replace 'jegan' with your name
+
       containers:
       - image: bitnami/mariadb:latest
         name: mariadb
+
+        volumeMounts:
+        - name: mariadb-storage
+          mountPath: /bitnami/mariadb/data
         env:
         - name: MARIADB_ROOT_PASSWORD
           value: root@123
+
