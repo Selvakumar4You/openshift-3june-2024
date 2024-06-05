@@ -128,3 +128,13 @@ oc get po,pv,pvc,svc,route
 
 Expected output
 ![cm](cm7.png)
+
+
+## Info - Helm Overview
+<pre>
+- Helm is a package manager that can be used to package your kubernetes/openshift cloud native applications
+- Just like package managers like apt(apt-get), yum, rpm, dnf, npm, pip are used to install,uninstall, update/upgrade softwares, we can use Helm package manager to install/uninstall/upgrade applications into Kubernetes/Openshift
+- Helm is also intergrated with Openshift
+- Helm packaged applications are called Charts
+- Helm chart is a tar.gz compressed that follows a specific folder structure within the compressed file
+</pre>
