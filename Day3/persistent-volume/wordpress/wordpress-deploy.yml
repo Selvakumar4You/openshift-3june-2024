@@ -22,6 +22,7 @@ spec:
       containers:
       - image: bitnami/wordpress:latest
         name: wordpress
+        imagePullPolicy: IfNotPresent
 
         volumeMounts:
         - name: wordpress-storage
