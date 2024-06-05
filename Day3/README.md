@@ -103,3 +103,15 @@ Expected output
 ![cm](cm4.png)
 ![cm](cm5.png)
 ![cm](cm6.png)
+
+Once you are done with this lab exercise, you may clean up the resources as shown below
+```
+cd ~/openshift-3june-2024
+cd Day3/configs-and-secrets/wordpress
+
+./delete-all.sh
+oc get po,pv,pvc,svc,route
+```
+
+Expected output
+![cm](cm7.png)
