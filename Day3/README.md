@@ -138,3 +138,49 @@ Expected output
 - Helm packaged applications are called Charts
 - Helm chart is a tar.gz compressed that follows a specific folder structure within the compressed file
 </pre>
+
+
+## Lab - Creating a custom helm chart for our wordpress application deployment
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day3/helm
+
+helm version
+helm create wordpress
+tree wordpress
+
+cd wordpress/templates
+rm -rf *
+cd ../..
+cp manifest-scripts/*.yml wordpress/templates
+cp values.yaml wordpress
+tree wordpress
+```
+
+Let's create a wordpress helm chart package
+```
+cd ~/openshift-3june-2024
+cd Day3/helm
+ls
+helm package wordpress
+ls
+```
+
+Installing helm wordpress chart into openshift
+```
+cd ~/openshift-3june-2024
+cd Day3/helm
+ls
+helm install wp wordpress-0.1.0.tgz
+helm list
+```
+
+Expected output
+![helm](helm1.png)
+![helm](helm2.png)
+![helm](helm3.png)
+![helm](helm4.png)
+![helm](helm5.png)
+![helm](helm6.png)
+![helm](helm7.png)
