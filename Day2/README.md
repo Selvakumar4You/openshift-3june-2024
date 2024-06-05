@@ -403,3 +403,14 @@ Expected output
 ![mariadb](maria5.png)
 ![mariadb](maria6.png)
 ![mariadb](maria7.png)
+
+Once you are done with this exercise, you may delete the mariadb and related pv and pvc to freeup resources.
+```
+cd ~/openshift-3june-2024
+cd Day2/persistent-volume
+
+oc delete -f mariadb-deploy.yml
+oc delete -f mariadb-pvc.yml
+oc delete -f mariadb-pv.yml
+```
+If you noticed above, we have to delete the resources in the reverse order.  While deploying mariadb, we would have created the pv first, followed by pvc and then the deployment at the last, while deleting we need to follow reverse order to save time.
