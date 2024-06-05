@@ -1,6 +1,10 @@
 # Day 3
 
 ## Lab - Deploying multi-pod(wordpress & mariadb) wordpress application
+
+![wordpress](wordpress-dep.png)
+
+Let's deploy wordpress and mariadb 
 ```
 cd ~/openshift-3june-2024
 git pull
