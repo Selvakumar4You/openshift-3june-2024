@@ -211,3 +211,23 @@ Expected output
 ![daemonset](ds2.png)
 ![daemonset](ds3.png)
 ![daemonset](ds4.png)
+
+## Lab - Creating a Job to do an onetime activity
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day3/job
+ls
+oc apply -f job.yml
+oc get jobs
+oc get po -w
+oc logs hello-job-8jzjp
+```
+
+Expected output
+![job](job1.png)
+![job](job2.png)
+![job](job3.png)
+![job](job4.png)
+![job](job5.png)
+![job](job6.png)
