@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cron-job
+spec:
+  schedule: "* * * * *"   # Cron schedule (runs every 1 minute)
+  # * - minuute
+  # * - hour
+  # * - which day in a month
+  # * - month ( 1 - 12 )
+  # * - day in a week  ( 1 - 7 )
+  concurrencyPolicy: Allow
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 4
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: alpine-container
+            image: alpine:latest
+            command: ["sh", "-c", "echo Hello"]
+          restartPolicy: OnFailure
