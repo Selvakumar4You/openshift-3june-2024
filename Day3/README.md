@@ -240,5 +240,21 @@ Expected output
 
 ## Lab - Creating a recurring job using cronjob that be scheuled
 ```
-
+cd ~/openshift-3june-2024
+git pull
+cd Day3/cronjob
+ls
+oc apply -f cronjob.yml
+oc get cronjobs
+oc get po -w
+oc logs cron-job-28627603-wbmfb
 ```
+
+Expected output
+![cronjob](cronjob1.png)
+![cronjob](cronjob2.png)
+![cronjob](cronjob3.png)
+![cronjob](cronjob4.png)
+![cronjob](cronjob5.png)
+![cronjob](cronjob6.png)
+![cronjob](cronjob7.png)
