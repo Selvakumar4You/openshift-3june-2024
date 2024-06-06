@@ -184,3 +184,16 @@ Expected output
 ![helm](helm5.png)
 ![helm](helm6.png)
 ![helm](helm7.png)
+
+## Info - DaemonSet Overview
+<pre>
+- In case, we need one Pod deployed in every node we can choose to deploy the application as a DaemonSet
+- The DaemonSet controller, check the number of nodes available in the openshift cluster accordingly it will create so many Pods and deploy them one Pod per node
+- In case new nodes join the openshift cluster, the DaemonSet controller automatically add one Pod on that new node as well
+- On the similar line, in case when nodes are removed from the openshift cluster, the Pods on those nodes are removed automatically
+- We can manually scale up/down a DaemonSet
+- Examples
+  - One kube-proxy Pod runs in every node which is a DaemonSet
+  - default-dns Pod runs in every node, which is a DaemonSet
+  
+</pre>
