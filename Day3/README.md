@@ -299,8 +299,8 @@ oc new-app https://github.com/tektutor/spring-ms.git --strategy=docker
 ```
 
 Expected output
-[docker-strategy](docker1.png)
-[docker-strategy](docker2.png)
-[docker-strategy](docker3.png)
-[docker-strategy](docker4.png)
-[docker-strategy](docker5.png)
+![docker-strategy](docker1.png)
+![docker-strategy](docker2.png)
+![docker-strategy](docker3.png)
+![docker-strategy](docker4.png)
+![docker-strategy](docker5.png)
