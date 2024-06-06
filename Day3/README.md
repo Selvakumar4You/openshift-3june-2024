@@ -213,6 +213,11 @@ Expected output
 ![daemonset](ds4.png)
 
 ## Lab - Creating a Job to do an onetime activity
+For details, you may refer the official documentation
+<pre>
+https://docs.openshift.com/container-platform/4.15/rest_api/workloads_apis/job-batch-v1.html  
+</pre>
+
 ```
 cd ~/openshift-3june-2024
 git pull
@@ -231,3 +236,71 @@ Expected output
 ![job](job4.png)
 ![job](job5.png)
 ![job](job6.png)
+
+
+## Lab - Creating a recurring job using cronjob that be scheuled
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day3/cronjob
+ls
+oc apply -f cronjob.yml
+oc get cronjobs
+oc get po -w
+oc logs cron-job-28627603-wbmfb
+```
+
+Expected output
+![cronjob](cronjob1.png)
+![cronjob](cronjob2.png)
+![cronjob](cronjob3.png)
+![cronjob](cronjob4.png)
+![cronjob](cronjob5.png)
+![cronjob](cronjob6.png)
+![cronjob](cronjob7.png)
+
+## Lab - Deploying stateful application using StatefulSet
+
+For more details, you may refer my medium blog article here
+<pre>
+https://medium.com/tektutor/deploying-stateful-applications-in-kubernetes-8ffd46920b55  
+</pre>
+
+```
+cd ~/openshift-3june-2023
+git pull
+cd Day3/statefulset
+
+oc apply -f mongodb-pv.yml
+oc apply -f mongodb-pvc.yml
+oc apply -f mongodb-statefulset.yml
+```
+
+Expected output
+![statefulset](ss1.png)
+
+
+## Info - S2I (Source to Image)
+<pre>
+- S2I is a new feature added in OpenShift
+- S2I is not supported in Kubernetes
+- In case of S2I, we can provide a GitHub, BitBucket or any version control url for openshift to clone/download the source code
+- Once the source code is cloned
+- In case, our GitHub repo also has a Dockerfile or a Containerfile
+- atleast 3 strategies are supported, source strategy, docker strategy and pipeline strategy
+- in case of source strategy, we just need to provide our application code without (Dockerfile, devfile.yaml, deploy.yaml)
+- in case of source strategy, we need to mention the container image that will have all the tools required to build our application
+- in case of docker strategy, we need to provide a Dockerfile or Containerfile as part of our GitHub repo along with our appliaction code
+</pre>
+
+## Lab - Deploying a spring-boot hello microservice using S2I docker strategy
+```
+oc new-app https://github.com/tektutor/spring-ms.git --strategy=docker
+```
+
+Expected output
+![docker-strategy](docker1.png)
+![docker-strategy](docker2.png)
+![docker-strategy](docker3.png)
+![docker-strategy](docker4.png)
+![docker-strategy](docker5.png)
