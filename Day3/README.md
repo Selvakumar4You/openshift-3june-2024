@@ -213,6 +213,11 @@ Expected output
 ![daemonset](ds4.png)
 
 ## Lab - Creating a Job to do an onetime activity
+For details, you may refer the official documentation
+<pre>
+https://docs.openshift.com/container-platform/4.15/rest_api/workloads_apis/job-batch-v1.html  
+</pre>
+
 ```
 cd ~/openshift-3june-2024
 git pull
@@ -231,3 +236,9 @@ Expected output
 ![job](job4.png)
 ![job](job5.png)
 ![job](job6.png)
+
+
+## Lab - Creating a recurring job using cronjob that be scheuled
+```
+
+```
