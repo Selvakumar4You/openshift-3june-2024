@@ -1,0 +1,23 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: hello
+  labels:
+    name: hello
+spec:
+  triggers:
+  - type: ConfigChange
+  source:
+    type: Git
+    git:
+      uri: "https://github.com/tektutor/openshift-27may-2024.git"
+      ref: main
+    contextDir: "Day5/BuildConfig"
+  strategy:
+    type: Docker
+  output:
+    to:
+      kind: DockerImage
+      name: "jeganathan.jfrog.io/tektutor-docker/hello-spring-microservice:1.0"
+    pushSecret:
+      name: private-jfrog-image-registry 

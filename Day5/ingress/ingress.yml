@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tektutor 
+  annotations:
+    haproxy.router.openshift.io/rewrite-target: /
+spec:
+  rules:
+  - host: tektutor.apps.ocp4.tektutor.org.labs	
+    http:
+      paths:
+      - backend:
+          service:
+            name: nginx
+            port:
+              number: 8080
+        path: /nginx
+        pathType: Prefix 
+
+      - backend:
+          service:
+            name: hello 
+            port:
+              number: 8080
+        path: /hello
+        pathType: Prefix 

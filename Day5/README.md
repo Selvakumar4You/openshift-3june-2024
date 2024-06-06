@@ -22,7 +22,7 @@
 
 Let's create an image stream
 ```
-cd ~/openshift-3june-2024
+cd ~/openshift-27may-2024
 git pull
 cd Day5/BuildConfig
 
@@ -34,7 +34,7 @@ oc get is
 
 Let's create the buildconfig
 ```
-cd ~/openshift-3june-2024
+cd ~/openshift-27may-2024
 git pull
 cd Day5/BuildConfig
 oc delete -f buildconfig.yml
@@ -57,8 +57,7 @@ oc get secrets
 
 ## Lab - Build and Push Custom Docker Image to JFrog Artifactory using BuildConfig
 ```
-cd ~/openshift-3june-2024
-
+cd ~/openshift-27may-2024
 git pull
 cd Day5/BuildConfig
 
@@ -273,7 +272,7 @@ Let's say our application involves loads of disk read/write, hence our applicati
   deployed onto those nodes that has SSD disks
 - In case the scheduler is not able to find nodes has SSD disk, then it would still deploy the Pods on nodes that doesn't have SSD disks in case your affinitiy type is "Preferred"
 ```
-cd ~/openshift-3june-2024
+cd ~/openshift-may-2024
 git pull
 cd Day5/scheduling
 oc apply -f nginx-deploy-with-preffered-node-affinity.yml
@@ -286,7 +285,7 @@ Expected output
 
 Let's delete the preferred Disk affinity scheduling
 ```
-cd ~/openshift-3june-2024
+cd ~/openshift-may-2024
 git pull
 cd Day5/scheduling
 oc delete -f nginx-deploy-with-preffered-node-affinity.yml
@@ -294,7 +293,7 @@ oc delete -f nginx-deploy-with-preffered-node-affinity.yml
 
 Let's deploy the required Disk affinity scheduling
 ```
-cd ~/openshift-3june-2024
+cd ~/openshift-may-2024
 git pull
 cd Day5/scheduling
 oc apply -f nginx-deploy-with-required-node-affinity.yml
@@ -303,5 +302,7 @@ Expected output
 ![Node Affinity](required.png)
  
 ## Kindly complete the post-test from RPS Lab Machine
+https://app.mymapit.in/code4/tiny/aHcZd8
  
 ## Feedback - kindly provide your feedback here
+https://survey.zohopublic.com/zs/3ADHNx

@@ -1,0 +1,13 @@
+apiVersion: sources.knative.dev/v1
+kind: PingSource
+metadata:
+  name: ping-event-source
+spec:
+  schedule: "*/2 * * * *"
+  jsonData: '{"message": "Lab exercise to demonstrate channel event source"}'
+  sink:
+    ref:
+      apiVersion: messaging.knative.dev/v1
+      kind: Channel
+      name: hello-eventing-channel 
+

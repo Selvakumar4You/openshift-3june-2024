@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: curler
+  name: curler
+spec:
+  containers:
+  - name: curler
+    image: tektutor/spring-ms:1.0 
+    tty: true
+

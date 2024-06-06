@@ -1,0 +1,17 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: blue-green
+spec:
+  template:
+    spec:
+      containers:
+      - image: quay.io/rhdevelopers/blue-green-canary
+        env:
+        - name: BLUE_GREEN_CANARY_COLOR
+          value: "#00FF00"
+
+        - name: BLUE_GREEN_CANARY_MESSAGE
+          value: "Hello Microservice"
+
+

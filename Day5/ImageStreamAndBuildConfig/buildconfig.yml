@@ -1,0 +1,20 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: spring-hello 
+  labels:
+    name: spring-hello
+spec:
+  triggers:
+    - type: ConfigChange
+  source:
+    contextDir: "Day5/ImageStreamAndBuildConfig"
+    type: Git
+    git:
+      uri: 'https://github.com/tektutor/openshift-may-2024.git'
+  strategy:
+    type: Docker
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'tektutor-spring-hello:latest'
