@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: couchdb-pvc-jegan #Replace 'jegan' with your name
+spec:
+  selector:
+    matchLabels:
+      name: jegan #Replace 'jegan' with your name
+  accessModes:
+  - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 100Mi

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: couchdb
+  name: couchdb
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: couchdb
+  template:
+    metadata:
+      labels:
+        app: couchdb
+    spec:
+      volumes:
+      - name: couchdb-storage
+        persistentVolumeClaim:
+          claimName: couchdb-pvc-jegan #Replace 'jegan' with your name
+
+      containers:
+      - image: bitnami/couchdb:latest
+        name: couchdb
+        imagePullPolicy: IfNotPresent
+
+        volumeMounts:
+        - name: couchdb-storage
+          mountPath: /bitnami/couchdb
