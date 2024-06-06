@@ -30,9 +30,13 @@ which openssl
 openssl version
 ```
 
+## Lab - Let's deploy nginx 
+```
+oc new --name=nginx bitnami/nginx:latest
+```
+Expected output
+![nginx][nginx1.png]
 
-## Lab - Create an edge route ( https url )
-You can secure your routes with https(secured) as url as opposed to http(unsecured).
 
 ## Lab - Create an edge route (https based public route url)
 
