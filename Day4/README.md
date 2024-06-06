@@ -1,5 +1,43 @@
 # Day 4
 
+## Lab - Deploying Angular application from OpenShift Webconsole using Developer context
+![angular](angular1.png)
+![angular](angular2.png)
+![angular](angular2.5.png)
+![angular](angular3.png)
+![angular](angular4.png)
+![angular](angular5.png)
+![angular](angular6.png)
+![angular](angular7.png)
+![angular](angular8.png)
+![angular](angular9.png)
+
+## Lab - Deploying ReactJS application in Openshift from webconsole
+![react](react1.png)
+![react](react2.png)
+![react](react3.png)
+![react](react4.png)
+![react](react5.png)
+![react](react6.png)
+![react](react7.png)
+![react](react8.png)
+![react](react9.png)
+
+## Lab - Deploying a Java springboot application from GitHub source code into Openshift
+```
+oc new-app https://github.com/tektutor/spring-ms.git --strategy=docker
+oc expose svc/spring-ms
+oc get bc
+oc logs -f bc/spring-ms
+```
+
+Expected output
+![spring](spring1.png)
+![spring](spring2.png)
+![spring](spring3.png)
+![spring](spring4.png)
+![spring](spring5.png)
+
 ## Info - Installing openssl ( is already installed in our lab - just for your future reference )
 
 Installing openssl from source code ( Already installed on Lab machines, so kindly skip this installation)
@@ -30,9 +68,13 @@ which openssl
 openssl version
 ```
 
+## Lab - Let's deploy nginx 
+```
+oc new --name=nginx bitnami/nginx:latest
+```
+Expected output
+![nginx][nginx1.png]
 
-## Lab - Create an edge route ( https url )
-You can secure your routes with https(secured) as url as opposed to http(unsecured).
 
 ## Lab - Create an edge route (https based public route url)
 
