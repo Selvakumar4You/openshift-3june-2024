@@ -195,5 +195,19 @@ Expected output
 - Examples
   - One kube-proxy Pod runs in every node which is a DaemonSet
   - default-dns Pod runs in every node, which is a DaemonSet
-  
 </pre>
+
+## Lab - Deploying nginx as a daemonset
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day3/daemonset
+oc apply -f nginx-daemonset.yml
+oc get pod -o wide
+```
+
+Expected output
+![daemonset](ds1.png)
+![daemonset](ds2.png)
+![daemonset](ds3.png)
+![daemonset](ds4.png)
