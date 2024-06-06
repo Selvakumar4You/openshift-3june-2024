@@ -138,3 +138,76 @@ Expected output
 - Helm packaged applications are called Charts
 - Helm chart is a tar.gz compressed that follows a specific folder structure within the compressed file
 </pre>
+
+
+## Lab - Creating a custom helm chart for our wordpress application deployment
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day3/helm
+
+helm version
+helm create wordpress
+tree wordpress
+
+cd wordpress/templates
+rm -rf *
+cd ../..
+cp manifest-scripts/*.yml wordpress/templates
+cp values.yaml wordpress
+tree wordpress
+```
+
+Let's create a wordpress helm chart package
+```
+cd ~/openshift-3june-2024
+cd Day3/helm
+ls
+helm package wordpress
+ls
+```
+
+Installing helm wordpress chart into openshift
+```
+cd ~/openshift-3june-2024
+cd Day3/helm
+ls
+helm install wp wordpress-0.1.0.tgz
+helm list
+```
+
+Expected output
+![helm](helm1.png)
+![helm](helm2.png)
+![helm](helm3.png)
+![helm](helm4.png)
+![helm](helm5.png)
+![helm](helm6.png)
+![helm](helm7.png)
+
+## Info - DaemonSet Overview
+<pre>
+- In case, we need one Pod deployed in every node we can choose to deploy the application as a DaemonSet
+- The DaemonSet controller, check the number of nodes available in the openshift cluster accordingly it will create so many Pods and deploy them one Pod per node
+- In case new nodes join the openshift cluster, the DaemonSet controller automatically add one Pod on that new node as well
+- On the similar line, in case when nodes are removed from the openshift cluster, the Pods on those nodes are removed automatically
+- We can't manually scale up/down a DaemonSet
+- Examples
+  - One kube-proxy Pod runs in every node which is a DaemonSet
+  - default-dns Pod runs in every node, which is a DaemonSet
+</pre>
+
+## Lab - Deploying nginx as a daemonset
+```
+cd ~/openshift-3june-2024
+git pull
+cd Day3/daemonset
+oc apply -f nginx-daemonset.yml
+oc get pod -o wide
+```
+
+Expected output
+![daemonset](ds1.png)
+![daemonset](ds2.png)
+![daemonset](ds3.png)
+![daemonset](ds4.png)
