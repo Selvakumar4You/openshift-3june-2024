@@ -2,7 +2,7 @@
 ## Info - What is an ImageStream in OpenShift?
 <pre>
 - ImageStream is a resource supported only in OpenShift
-- ImageStream is connected with OpenShift's Internal Private Container Image Registry
+- ImageStream is connected with OpenShift's Internal Container Image Registry
 - We can store multiple versions of same container image within an ImageStream
 </pre>
 	
