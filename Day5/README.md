@@ -317,6 +317,17 @@ Test the knative function
 curl -k https://functions-jegan.apps.ocp4.tektutor.org.labs
 ```
 
+## Info - What is Ingress?
+<pre>
+- Ingress is a forwarding/routing rules
+- There is controlled called Ingress Controller, which manages the Ingress resource
+- Ingress can be created by us under any project namespace, but the controller access to monitor and ingress resources created under any namespace
+- Ingress Controllers Examples
+  - HAProxy Ingress Controller
+  - Nginx Ingress Controller
+- Ingress Controllers as soon as it found a new Ingress resources, it picks all the rules in the Ingress and configures a load balancer to route the traffic to respective services as defined in the ingress resource
+</pre>
+
 ## Lab - Scheduling 
 
 Let's say our application involves loads of disk read/write, hence our application prefers nodes that has SSD disk.
@@ -352,7 +363,14 @@ oc apply -f nginx-deploy-with-required-node-affinity.yml
 ```
 Expected output
 ![Node Affinity](required.png)
+
  
 ## Kindly complete the post-test from RPS Lab Machine
- 
+<pre>
+https://survey.zohopublic.com/zs/dnBTiX
+</pre> 
+
 ## Feedback - kindly provide your feedback here
+<pre>
+https://app.mymapit.in/code4/tiny/03bObw
+</pre>
