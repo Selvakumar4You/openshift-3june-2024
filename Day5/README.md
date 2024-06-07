@@ -290,6 +290,23 @@ Expected output
 ![knative](knative11.png)
 ![knative](knative12.png)
 
+## Lab - Creating a knative function in nodejs
+This will generate a basic nodejs application in your current directory
+```
+kn func create -l node
+```
+
+Deploy the nodes application into openshift after building it
+```
+kn func deploy -n jegan
+```
+
+Test the knative function
+```
+curl -k https://functions-jegan.apps.ocp4.tektutor.org.labs
+```
+
+
 ## Lab - Scheduling 
 
 Let's say our application involves loads of disk read/write, hence our application prefers nodes that has SSD disk.
