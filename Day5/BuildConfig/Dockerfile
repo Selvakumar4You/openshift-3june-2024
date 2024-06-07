@@ -6,6 +6,6 @@ COPY src .
 RUN mvn clean package
 
 FROM registry.access.redhat.com/ubi8/openjdk-17
-COPY --from=builder target/*.jar ./app.jar
+COPY --from=builder target/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT [ "java", "-jar", "./app.jar" ]
+ENTRYPOINT [ "java", "-jar", "app.jar" ]
