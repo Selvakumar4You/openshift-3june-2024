@@ -10,7 +10,7 @@ spec:
   source:
     type: Git
     git:
-      uri: "https://github.com/tektutor/openshift-27may-2024.git"
+      uri: "https://github.com/tektutor/openshift-may-2024.git"
       ref: main
     contextDir: "Day5/BuildConfig"
   strategy:
@@ -18,6 +18,6 @@ spec:
   output:
     to:
       kind: DockerImage
-      name: "jeganathan.jfrog.io/tektutor-docker/hello-spring-microservice:1.0"
+      name: "openshiftjegan.jfrog.io/jegan-docker/hello-spring-microservice:2.0"
     pushSecret:
-      name: private-jfrog-image-registry 
+      name: private-jfrog-image-registry
