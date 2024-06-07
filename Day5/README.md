@@ -16,8 +16,8 @@
 - Build config with docker strategy will pick the Dockerfile present in our Day5/BuildConfig and starts the build
 - The Dockerfile is a multi-stage Dockeerfile, in the first stage it builds the springboot sample microservice source code to create the application execuable jar file. The second stage copies the application jar and builds the final custom container image.
 - The container image is saved to ImageStream.
-- As the image stream is pointing to Openshift's Private Registry, eventually the image is stored in Openshift's Private Container Registry.
-- The output of this Buildconfig is a Docker image, which will be pushed to openshift's private registry.
+- As the image stream is pointing to Openshift's Internal Container Image Registry, eventually the image is stored in Openshift's Internal Container Image Registry.
+- The output of this Buildconfig is a Docker image, which will be pushed to openshift's Internal Container Image registry.
 </pre>
 
 Let's create an image stream
