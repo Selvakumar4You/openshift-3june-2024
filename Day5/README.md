@@ -49,6 +49,16 @@ oc get build
 oc logs -f bc/spring-hello
 ```
 
+You can deploy the application after replacing the image name with your image name ( replace 'jegan' with your project name)
+```
+oc apply -f hello-deploy-from-openshift-image-registry.yml
+oc get po
+oc expose deploy/hello --port=8080
+oc expose svc/hello
+oc get route
+curl http://hello-jegan.apps.ocp4.tektutor.org.labs
+```
+
 Expected output
 ![bc](bc1.png)
 ![bc](bc2.png)
