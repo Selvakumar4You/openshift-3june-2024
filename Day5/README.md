@@ -2,7 +2,7 @@
 ## Info - What is an ImageStream in OpenShift?
 <pre>
 - ImageStream is a resource supported only in OpenShift
-- ImageStream is connected with OpenShift's Internal Private Container Image Registry
+- ImageStream is connected with OpenShift's Internal Container Image Registry
 - We can store multiple versions of same container image within an ImageStream
 </pre>
 	
@@ -16,13 +16,13 @@
 - Build config with docker strategy will pick the Dockerfile present in our Day5/BuildConfig and starts the build
 - The Dockerfile is a multi-stage Dockeerfile, in the first stage it builds the springboot sample microservice source code to create the application execuable jar file. The second stage copies the application jar and builds the final custom container image.
 - The container image is saved to ImageStream.
-- As the image stream is pointing to Openshift's Private Registry, eventually the image is stored in Openshift's Private Container Registry.
-- The output of this Buildconfig is a Docker image, which will be pushed to openshift's private registry.
+- As the image stream is pointing to Openshift's Internal Container Image Registry, eventually the image is stored in Openshift's Internal Container Image Registry.
+- The output of this Buildconfig is a Docker image, which will be pushed to openshift's Internal Container Image registry.
 </pre>
 
 Let's create an image stream
 ```
-cd ~/openshift-27may-2024
+cd ~/openshift-3june-2024
 git pull
 cd Day5/BuildConfig
 
@@ -34,7 +34,7 @@ oc get is
 
 Let's create the buildconfig
 ```
-cd ~/openshift-27may-2024
+cd ~/openshift-3june-2024
 git pull
 cd Day5/BuildConfig
 oc delete -f buildconfig.yml
@@ -57,7 +57,7 @@ oc get secrets
 
 ## Lab - Build and Push Custom Docker Image to JFrog Artifactory using BuildConfig
 ```
-cd ~/openshift-27may-2024
+cd ~/openshift-3june-2024
 git pull
 cd Day5/BuildConfig
 
@@ -110,7 +110,7 @@ Status: Downloaded newer image for openshiftjegan.jfrog.io/jegan-docker/hello-wo
 openshiftjegan.jfrog.io/jegan-docker/hello-world:latest
 	
 jegan@tektutor.org $ docker tag openshiftjegan.jfrog.io/jegan-docker/hello-world openshiftjegan.jfrog.io/jegan-docker/hello-world:1.0.0
- jegan@tektutor.org  ~/openshift-may-2024/Day5   main  docker push openshiftjegan.jfrog.io/jegan-docker/hello-world:1.0.0
+ jegan@tektutor.org $ docker push openshiftjegan.jfrog.io/jegan-docker/hello-world:1.0.0
 The push refers to repository [openshiftjegan.jfrog.io/jegan-docker/hello-world]
 ac28800ec8bb: Layer already exists 
 1.0.0: digest: sha256:d37ada95d47ad12224c205a938129df7a3e52345828b4fa27b03a98825d1e2e7 size: 524
@@ -272,7 +272,7 @@ Let's say our application involves loads of disk read/write, hence our applicati
   deployed onto those nodes that has SSD disks
 - In case the scheduler is not able to find nodes has SSD disk, then it would still deploy the Pods on nodes that doesn't have SSD disks in case your affinitiy type is "Preferred"
 ```
-cd ~/openshift-may-2024
+cd ~/openshift-3june-2024
 git pull
 cd Day5/scheduling
 oc apply -f nginx-deploy-with-preffered-node-affinity.yml
@@ -285,7 +285,7 @@ Expected output
 
 Let's delete the preferred Disk affinity scheduling
 ```
-cd ~/openshift-may-2024
+cd ~/openshift-3june-2024
 git pull
 cd Day5/scheduling
 oc delete -f nginx-deploy-with-preffered-node-affinity.yml
@@ -293,7 +293,7 @@ oc delete -f nginx-deploy-with-preffered-node-affinity.yml
 
 Let's deploy the required Disk affinity scheduling
 ```
-cd ~/openshift-may-2024
+cd ~/openshift-3june-2024
 git pull
 cd Day5/scheduling
 oc apply -f nginx-deploy-with-required-node-affinity.yml
@@ -302,7 +302,5 @@ Expected output
 ![Node Affinity](required.png)
  
 ## Kindly complete the post-test from RPS Lab Machine
-https://app.mymapit.in/code4/tiny/aHcZd8
  
 ## Feedback - kindly provide your feedback here
-https://survey.zohopublic.com/zs/3ADHNx
