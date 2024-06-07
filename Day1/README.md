@@ -268,6 +268,21 @@ D - Dependency Inject or Dependency Inversion or Inversion of Control (IOC)
 - there can any number of worker nodes
 - worker nodes are also called as compute nodes
 
+## Info - OpenShift states
+https://access.redhat.com/documentation/en-us/openshift_container_platform/4.8/html/nodes/working-with-clusters#nodes-containers-events-list_nodes-containers-events
+
+## Info - Pod Lifecycle
+- Pending - Container image gets downloads or there are no Persistent Volume to bound and claim them
+- Running - The Pod is scheduled to a node and all containers in the Pod are up and running
+- Succeeded - All containers in the Pod have terminated succesfully and not be restarted
+- Failed - All containers in the Pod have terminated but one or more containers terminated with non-zero status or was terminated by Openshift
+- Unknown - For some reason, the state of the Pod could not be obtained may be there is some problem in communicating to the node where the Pod is running
+
+## Info - Container Lifecycle
+- Waiting - pulling the container image
+- Running - container is running without issues
+- Terminated - container in the Terminated state began execution and then either ran to completion or failed for some reason
+
 ## Lab - Listing the nodes in the Openshift cluster
 ```
 oc get nodes
