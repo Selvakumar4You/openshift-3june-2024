@@ -290,13 +290,24 @@ Expected output
 ![knative](knative11.png)
 ![knative](knative12.png)
 
-## Lab - Creating a knative function in nodejs
+## Lab - Developing a simple knative function in nodejs and deploying into Openshift cluster
+
 This will generate a basic nodejs application in your current directory
 ```
 kn func create -l node
 ```
 
-Deploy the nodes application into openshift after building it
+If you wish to build your application 
+```
+kn func build
+```
+
+If you wish to run the application locally and test it
+```
+kn func run
+```
+
+Deploy the nodejs application into openshift after building it
 ```
 kn func deploy -n jegan
 ```
@@ -305,7 +316,6 @@ Test the knative function
 ```
 curl -k https://functions-jegan.apps.ocp4.tektutor.org.labs
 ```
-
 
 ## Lab - Scheduling 
 
