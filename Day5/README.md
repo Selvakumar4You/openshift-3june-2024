@@ -367,10 +367,10 @@ Expected output
  
 ## Kindly complete the post-test from RPS Lab Machine
 <pre>
-https://survey.zohopublic.com/zs/dnBTiX
+https://app.mymapit.in/code4/tiny/03bObw
 </pre> 
 
 ## Feedback - kindly provide your feedback here
 <pre>
-https://app.mymapit.in/code4/tiny/03bObw
+https://survey.zohopublic.com/zs/dnBTiX	
 </pre>
