@@ -48,6 +48,21 @@ oc get build
 
 oc logs -f bc/spring-hello
 ```
+
+Expected output
+![bc](bc1.png)
+![bc](bc2.png)
+![bc](bc3.png)
+![bc](bc4.png)
+![bc](bc4.png)
+![bc](bc5.png)
+![bc](bc6.png)
+![bc](bc7.png)
+![bc](bc8.png)
+![bc](bc9.png)
+![bc](bc10.png)
+![bc](bc11.png)
+
 ## Lab - Create a JFrog Push secret
 ```
 oc create secret docker-registry private-jfrog-image-registry --docker-server=openshiftjegan.jfrog.io --docker-username=your-email-id --docker-password=your-jfrog-token
